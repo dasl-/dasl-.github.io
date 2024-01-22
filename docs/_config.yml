@@ -30,7 +30,7 @@ url: "https://dasl.cc" # the base hostname & protocol for your site, e.g. http:/
 github_username:  dasl-
 
 # Build settings
-theme: jekyll-whiteglass # https://github.com/yous/whiteglass
+remote_theme: yous/whiteglass # https://github.com/yous/whiteglass ; https://github.blog/2017-11-29-use-any-theme-with-github-pages/
 plugins:
   - jekyll-archives
   - jekyll-paginate
