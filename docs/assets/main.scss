@@ -3,10 +3,36 @@
 ---
 @import "whiteglass";
 
+a.page-link {
+    font-size: 18px;
+}
+
 ul#markdown-toc {
     margin-top: -10px;
 }
 
-// h1, h2, h3, h4, h5, h6 {
-//     font-family: Helvetica;
-// }
+p, ul, ol {
+    font-family:helvetica;
+}
+
+blockquote {
+    color: #111111;
+    background-color: #f8f8f8;
+    border-left: 4px solid #008000;
+    margin: 1em 0px;
+    padding: 1em 10px;
+    font-size:16px;
+    letter-spacing: normal;
+    font-style: normal;
+}
+blockquote:before {
+    color: #c6c6c6;
+    content: "\201C";
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.05em;
+    vertical-align: -0.4em;
+}
+blockquote p {
+    display: inline;
+}

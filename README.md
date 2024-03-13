@@ -9,6 +9,8 @@ bundle install
 bundle exec jekyll serve
 ```
 
+Edit the CSS by changing [`main.scss`](docs/assets/main.scss).
+
 ## Things we use:
 1. Theme: https://github.com/yous/whiteglass
 1. Linkify `<h1>`, `<h2>`, etc tags: https://github.com/allejo/jekyll-anchor-headings
