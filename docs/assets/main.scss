@@ -7,12 +7,16 @@ a.page-link {
     font-size: 18px;
 }
 
+a.post-link {
+    font-family: Bitter, "Apple SD Gothic Neo", "Noto Sans", "Source Han Sans", "Noto Sans CJK JP", "Source Han Sans JP", "Noto Sans CJK KR", "Source Han Sans KR", NanumBarunGothic, AppleGothic, "Malgun Gothic", Dotum, serif;
+}
+
 ul#markdown-toc {
     margin-top: -10px;
 }
 
 p, ul, ol {
-    font-family:helvetica;
+    font-family:helvetica, arial, sans-serif;
 }
 
 blockquote {
