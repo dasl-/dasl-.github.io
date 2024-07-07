@@ -30,7 +30,7 @@ My use case for setting custom timestamps was monitoring local air quality. The 
 2024-07-07T13:00:00,6.59
 ```
 
-I want Prometheus to associate the timestamp of air quality reading with the data point rather than the timestamp at which the metric was scraped by Prometheus, which may be 2 - 4 hours later.
+I want Prometheus to associate the timestamp of the air quality reading with the data point rather than the timestamp at which the metric was scraped by Prometheus, which may be 2 - 4 hours later.
 
 # Custom collectors
 
@@ -67,7 +67,7 @@ city_pm25 6.51 1720375200000
 
 # Custom exporters
 
-Problem solved, right? Wrong. I had been using the node_exporter's [textfile collector](https://github.com/prometheus/node_exporter?tab=readme-ov-file#textfile-collector) to export my data. But the textfile_collector does not support custom timestamps:
+Problem solved, right? Wrong. I had been using the node_exporter's [textfile collector](https://github.com/prometheus/node_exporter?tab=readme-ov-file#textfile-collector) to export my data. But the textfile collector does not support custom timestamps:
 
 > Note: Timestamps are not supported.
 
@@ -111,7 +111,7 @@ Problem solved, right? Wrong again. Checking your Prometheus logs, you may see e
 PROMETHEUS[1733468]: ts=2024-07-06T13:12:40.583Z caller=scrape.go:1729 level=warn component="scrape manager" scrape_pool=node target=http://study:9101/metrics msg="Error on ingesting samples that are too old or are too far into the future" num_dropped=1
 ```
 
-I believe if the timestamped metrics you are attempting to ingest have timestamps that are older than approximately 1 hour, you may encounter this error. Prometheus has an experimental feature that solves this problem: [`out_of_order_time_window`](https://prometheus.io/docs/prometheus/2.53/configuration/configuration/#tsdb). See also this [blog post](https://promlabs.com/blog/2022/10/05/whats-new-in-prometheus-2-39/#experimental-out-of-order-ingestion) announcing the feature. Since air quality data I need to ingest is at most 2 - 4 hours delayed, it would be sufficient to use a value of anything greater than `4h`. I decided to use a value of `1d` just to be conservative. Here's what [my config](https://gist.github.com/dasl-/eb28a9f692fdc76dc2c8033b40557616#file-prometheus-yaml-L44) looked like.
+I believe if the timestamped metrics you are attempting to ingest have timestamps that are older than approximately 1 hour, you may encounter this error. Prometheus has an experimental feature that solves this problem: [`out_of_order_time_window`](https://prometheus.io/docs/prometheus/2.53/configuration/configuration/#tsdb). See also this [blog post](https://promlabs.com/blog/2022/10/05/whats-new-in-prometheus-2-39/#experimental-out-of-order-ingestion) announcing the feature. Since the air quality data I need to ingest is at most 2 - 4 hours delayed, it would be sufficient to use a value of anything greater than `4h`. I decided to use a value of `1d` just to be conservative. Here's what [my config](https://gist.github.com/dasl-/eb28a9f692fdc76dc2c8033b40557616#file-prometheus-yaml-L44) looked like.
 
 I can now see the NYC air quality data in grafana:
 ![grafana panel showing air quality data](/assets/posts/2024-07-07-prometheus-timestamps/grafana.png)
