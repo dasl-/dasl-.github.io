@@ -9,7 +9,7 @@ author: "David Leibovic"
 To associate a custom timestamp with a Prometheus metric:
 
 1. Write a [custom collector](https://prometheus.github.io/client_python/collector/custom/) - you can't use the built-in [`Gauge`](https://prometheus.github.io/client_python/instrumenting/gauge/) class in the Python client.
-1. Write a [custom exporter](https://prometheus.io/docs/instrumenting/writing_exporters/). This is a web server that exposes the timestamped metrics in the `*.prom` file such that Prometheus can scrape them.
+1. Write a [custom exporter](https://prometheus.io/docs/instrumenting/writing_exporters/). This is a web server that exposes the timestamped metrics in the `*.prom` file such that Prometheus can scrape them. The built-in [textfile collector](https://github.com/prometheus/node_exporter?tab=readme-ov-file#textfile-collector) does not support timestamped metrics.
 1. Update your Prometheus config scrape targets with the address of the new exporter.
 1. Update your Prometheus config to set [`out_of_order_time_window`](https://prometheus.io/docs/prometheus/2.53/configuration/configuration/#tsdb).
 
