@@ -3,6 +3,8 @@
 ## Running locally:
 1. https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll
 
+Requires Ruby version 3.x, installed via `brew install ruby`.
+
 ```
 cd docs
 bundle install
