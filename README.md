@@ -13,6 +13,9 @@ bundle exec jekyll serve
 
 Edit the CSS by changing [`main.scss`](docs/assets/main.scss).
 
+## Creating a new post
+Create a new post in the `docs/_posts` directory. Prefix the filename with the date. Note that if you use a future date, jekyll will not render the post on the blog homepage. I.e. if the current date is 2024-12-30 and you use the date 2024-12-31, the post will not show up on the homepage.
+
 ## Things we use:
 1. Theme: https://github.com/yous/whiteglass
 1. Linkify `<h1>`, `<h2>`, etc tags: https://github.com/allejo/jekyll-anchor-headings
