@@ -46,7 +46,7 @@ Log lines, `strace` timing information, and [`phpspy`](https://github.com/adsr/p
 
 ## Is it due to elevated system CPU? (yes)
 
-Adding on to the evidence pointing away from network problems, we saw a large spike in system CPU usage about four minutes after newly autoscaled hosts were booted. If we waited until after this spike in system CPU to pool the hosts, we experienced no listen overflows. We observed that this spike in system CPU only occurred on Ubuntu hosts – CentOS did not have this problem:
+Adding on to the evidence pointing away from network problems, we saw a large spike in system CPU usage about four minutes after newly autoscaled hosts were booted. If we waited until after this spike in system CPU to pool the hosts, we experienced no listen overflows. This spike in system CPU only occurred on Ubuntu hosts – CentOS did not have this problem:
 
 ![system CPU graph](/assets/posts/2025-01-01-debugging-our-new-linux-kernel/i4.png)
 
