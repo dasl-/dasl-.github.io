@@ -26,7 +26,7 @@ Each listen overflow that occurs means we failed to serve a web request. This ca
 
 # What’s causing listen overflows?
 
-Listen overflows occured a few minutes after a newly autoscaled web server was pooled. They did not tend to recur subsequently. Furthermore, web requests had elevated latency during this same time period:
+Listen overflows occurred a few minutes after a newly autoscaled web server was pooled. They did not tend to recur subsequently. Furthermore, web requests had elevated latency during this same time period:
 
 ![web server listen overflow and web request latency graphs](/assets/posts/2025-01-01-debugging-our-new-linux-kernel/i2.png)
 
