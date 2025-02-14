@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- 
+        Print in FireFox with blank headers and footers
+        0 inch margin for left and right
+        -.25 inch margin for top and bottom
+
+        2023 update: print in FF with FF dialog (not system dialog)
+        * scale 100%
+        * 0.24 in top / bottom margin
+        * 0.2 in left / right margin
+-->
+<head>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+    <title>David Leibovic | Resume</title>
+    <meta name="robots" content="noindex, nofollow"/>
+    <style type="text/css" media="all">
+        html{
+            background-color:#444;
+            padding:0 1em;
+            font-size:.9em;
+            }
+        body {
+            background-color:#FFF;
+            font-family: Arial;
+            padding:2em;
+            margin:1em auto;
+            border:2px solid #000;
+            max-width: 56em;
+            }
+        #address{
+            display:inline;
+            float:right;
+            padding-top:2.5em;
+            }
+        #contact{
+            text-align:right;
+            }
+        .date {
+            float:right;
+            font-size:.9em;
+            text-align:right;
+            }
+        abbr, acronym{
+            border-bottom:1px dotted #333;
+            cursor:help;
+            }   
+        address{
+            font-style:italic;
+            color:#333;
+            font-size:.9em;
+            display: inline;
+            }
+        .content{
+            margin:0 0 0 0em;
+            }   
+        .section{
+            margin: 0 0 0em 0;
+            padding:1em 0 -1em 0;
+            line-height:1.3em;
+            }
+        p{
+            margin-top:.2em;
+            font-size:.9em;
+            }
+        ul{
+            padding-left:.5em;
+            margin-left:.5em;
+            margin-top:.2em;
+            font-size:12.96px; /* equivalent to 0.9em */
+        }
+        .column3
+        {
+            margin-right:1.5em;
+            margin-top:.2em;
+            margin-bottom:.2em;
+            float:left;
+            width: 16em;
+        }
+        .column4
+        {
+            margin-right:1em;
+            margin-top:.2em;
+            margin-bottom:.2em;
+            float:left;
+            width: 13.5em;
+        }
+        .column2
+        {
+            margin-right:1.5em;
+            margin-top:.2em;
+            margin-bottom:.2em;
+            float:left;
+            width: 27em;
+        }
+        #first-line-wrapper{
+            border-bottom:3px double #000;
+            margin:0 0 .1em 0;
+        }
+        h1{
+            font-family: Arial;
+            margin:0;
+            padding:1em 0 0 0;
+            font-size:1.75em;
+            letter-spacing:.11em;
+            display:inline;
+            float:left;
+            }
+        h2 {
+            font-family: Arial;
+            font-size:1.3em;
+            font-variant: small-caps;
+            letter-spacing:.11em;
+            border-bottom:1px solid #000;
+            margin-top: .7em;
+            margin-bottom:.55em;
+            }
+        .section h3 {
+            font-family: Arial;
+            font-size:1em;
+            font-variant: small-caps;
+            margin-bottom:0;
+            letter-spacing:.11em;
+            display:inline;
+            }
+        .subtitle{
+            margin-bottom:0;
+            font-size:.9em;
+            padding-left:1em;
+        }
+        a, a:visited{
+             color: blue;
+        }
+    </style>
+    <style type="text/css" media="print">
+        body {
+            background-color:#FFF;
+            border-width:0 0 0 0;
+            margin:-2em 0em 0em 0em;
+            padding:0em 0em 0em 0em;
+            width:100%;
+            font-size: .93em;
+            }
+    </style>
+    <?php
+        include("resources/includes/google_analytics.php");
+    ?>
+</head><body>
+    <div id="first-line-wrapper">
+        <h1>David Leibovic</h1>
+        <div id="address"><a href="http://github.com/dasl-/">github.com/dasl-</a>&nbsp;&nbsp;<a href="mailto:dasl@php.net">dasl@php.net</a></div>
+        <div style="clear:both;"></div>
+    </div>
+    <div id="contact">Brooklyn, NY</div>
+    
+    <div class="section">
+        <h2 style="margin-top:-3px;">Experience</h2>
+        <div class="content">
+            <span class="date">Jan 2024 &ndash; Present</span>
+            <h3>Senior staff systems architect - Etsy</h3>
+            <address>Brooklyn, NY</address>
+            <ul>
+                <li>I am designing a new memcached topology to reduce latency in our caching tier, which handles over 10,000,000 requests per second. I predict this will increase yearly sales by over $17,000,000.</li>
+                <li>Teaching, mentoring, and coaching across Etsy's engineering organization</li>
+            </ul>
+
+            <span class="date">Oct 2022 &ndash; Dec 2023</span>
+            <h3>Senior staff software engineer, Data Access Architect - Etsy</h3>
+            <address>Brooklyn, NY</address>
+            <ul>
+                <li>I lead the design of our in-house ORM, which handles automatic caching and cache invalidation.</li>
+                <li>Published <a href="https://www.etsy.com/codeascraft/scaling-etsy-payments-with-vitess-part-3--reducing-cutover-risk">a post on Etsy&rsquo;s engineering blog</a> describing how we used <a href="https://vitess.io/">Vitess</a> to horizontally scale databases</li>
+                <li>Created tooling to perform automated PHP code refactoring to assist with large scale migration</li>
+            </ul>
+
+            <span class="date">Oct 2020 &ndash; Sep 2022</span>
+            <h3>Staff software engineer II - Etsy</h3>
+            <address>Brooklyn, NY</address>
+            <ul>
+                <li>Led Etsy&rsquo;s MySQL architecture. Ensured databases are horizontally scalable. Improved Etsy&rsquo;s fault tolerance and fault isolation with respect to database outages.</li>
+                <li>As one of two engineers at Etsy with the skills to holistically investigate major outages affecting Etsy.com, I was responsible for writing incident reports and planning cross-team remediations</li>
+                <li>As a member of the Architecture Advisory Group, I provided feedback and facilitated discussions on all major architecture proposals in the company</li>
+                <li>Created tooling to easily identify DDoS attackers, web scraping bots, and application design antipatterns that are overloading Etsy&rsquo;s database tier with requests.</li>
+            </ul>
+
+            <span class="date">Mar 2018 &ndash; Sep 2020</span>
+            <h3>Staff software engineer I - Etsy</h3>
+            <address>Brooklyn, NY</address>
+            <ul>
+                <li>Led Etsy&rsquo;s adoption of <a href="https://vitess.io/">Vitess</a>, which gave us faster database failover and horizontal scalability for our MySQL databases</li>
+                <ul>
+                    <li>Created a five year plan to incrementally adopt Vitess. Retrofitted Vitess into Etsy&rsquo;s in-house ORM and database topology. My Vitess contributions are <a href="https://github.com/vitessio/vitess/commits?author=dasl-">viewable on github</a>.</li>
+                    <li>A/B tested Vitess to determine impact to query latency and customer conversion rate</li>
+                </ul>
+                <li>Improved <a href="https://github.com/phan/phan">Phan</a>, the PHP static analyzer we use at Etsy.</li>
+                <ul>
+                    <li>Created proprietary plugins that allow Phan to infer types in parts of our codebase that rely on dynamic language features</li>
+                    <li>Profiled Phan and optimized the hot path, in collaboration with Phan&rsquo;s maintainer, <a href="https://github.com/phan/phan/pull/3475">leading to a 16% improvement</a> in static analysis run time on Etsy&rsquo;s codebase. My other Phan contributions are <a href="https://github.com/phan/phan/commits?author=dasl-">viewable on github</a>.</li>
+                </ul>
+                <li>Migrated systems from our datacenter to Google Cloud Platform</li>
+            </ul>
+
+            <span class="date">Jun 2014 &ndash; Feb 2018</span>
+            <h3>Senior software engineer - Etsy</h3>
+            <address>Brooklyn, NY</address>
+            <ul>
+                <li>Scaled &ldquo;Arizona&rdquo;, our in-house key-value database system. Grew from 4,000 to over 50,000 requests per second. Data loaded daily grew from 1 TB to over 20 TB. Roundtrip latency: 1.5 ms.</li>
+                <li>Architected and built Etsy&rsquo;s Change Data Capture (CDC) system. My <a href="https://debezium.io">Debezium</a> contributions are <a href="https://github.com/debezium/debezium/commits?author=dasl-">viewable on github</a> and on their issue tracker (<a href="https://issues.redhat.com/browse/DBZ-188">example 1</a>, <a href="https://issues.redhat.com/browse/DBZ-210">example 2</a>, <a href="https://issues.redhat.com/browse/DBZ-31?focusedId=13389703&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-13389703">example 3</a>)</li>
+                <!-- <ul>
+                    <li>Modified <a href="https://debezium.io">Debezium</a> to be compatible with Etsy&rsquo;s unusual MySQL database topology: multi-primary DBs with 1,000 shards.</li>
+                    <li>My <a href="https://debezium.io">Debezium</a> contributions are <a href="https://github.com/debezium/debezium/commits?author=dasl-">viewable on github</a> and on their issue tracker (<a href="https://issues.redhat.com/browse/DBZ-188">example 1</a>, <a href="https://issues.redhat.com/browse/DBZ-210">example 2</a>, <a href="https://issues.redhat.com/browse/DBZ-31?focusedId=13389703&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-13389703">example 3</a>)</li>
+                </ul> -->
+            </ul>
+
+            <span class="date">Nov 2012 &ndash; Jun 2014</span>
+            <h3>Software engineer - Etsy</h3>
+            <address>Brooklyn, NY</address>
+            <!-- <ul>
+                <li>Integrated USPS and Canada Post, Etsy&rsquo;s first shipping labels providers, with our infrastructure</li>
+            </ul> -->
+
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Skills</h2>
+
+        <p><b>Languages:</b> Very experienced in PHP, SQL, and bash / <a href="https://gist.github.com/dasl-/6970cf99b87fea18a3ca8c858292a705">shell</a>. Intermediate experience in Python. Some experience in Go, JavaScript, Java, Processing, and openFrameworks.</p>
+
+        <p style="margin-top:-10px"><b>Tools:</b> strace, tcpdump, <a href="https://github.com/mikebrady/shairport-sync/issues/1515#issuecomment-1233652850">Wireshark</a>, Systemd, Linux, Grafana, perf, phpspy</p>
+    </div>
+    
+    <div class="section">
+        <h2>Education</h2>
+        <div class="content">
+            <span class="date">Summer of 2012</span>
+            <h3>Recurse Center</h3>
+            <address>New York, NY</address>
+            <ul>
+                <li>Selected from over 850 applicants to be one of 50 students in the fourth batch of <a href="https://www.recurse.com/about">Recurse Center</a>. Recurse Center is a three-month &ldquo;writers retreat&rdquo; for programmers.</li>
+                <li>Created a <a href="https://github.com/dasl-/my-life-aquatic">multiplayer game</a> using <a href="https://en.wikipedia.org/wiki/Processing#Processing.js">Processing.js</a> and WebSockets. It was <a href="https://web.archive.org/web/20130102145950/http://processingjs.org/exhibition/">featured on the Processing.js website</a> (first result).</li>
+            </ul>
+
+            <span class="date">2006 &ndash; 2010</span>
+            <h3>Oberlin College: BA in math, economics, and computer science</h3>
+            <address>Oberlin, OH</address>
+        </div>
+    </div>
+
+</body></html>

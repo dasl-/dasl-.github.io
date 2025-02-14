@@ -4,4 +4,8 @@ title: About
 permalink: /about/
 ---
 
-This is dasl's [blog](/).
+Hi, I'm David Leibovic. I'm an engineer at Etsy.
+
+* [github](https://github.com/dasl-)
+* [linkedin](https://www.linkedin.com/in/david-leibovic/)
+* [resume](/assets/resume.html)
