@@ -11,6 +11,11 @@
         * scale 100%
         * 0.24 in top / bottom margin
         * 0.2 in left / right margin
+
+        2025 update: print in FF with FF dialog (not system dialog)
+        * scale 98%
+        * 0.18" top, 0.15" bottom margin
+        * 0.2" left / right margin
 -->
 <head>
 
@@ -31,15 +36,14 @@
             margin:1em auto;
             border:2px solid #000;
             max-width: 56em;
-            }
+        }
         #address{
-            display:inline;
-            float:right;
-            padding-top:2.5em;
-            }
-        #contact{
-            text-align:right;
-            }
+            text-align: right;
+            white-space: nowrap; /* keep all links on one line */
+            margin: 0;
+            padding: 0;
+            flex: 1;
+        }
         .date {
             float:right;
             font-size:.9em;
@@ -48,7 +52,7 @@
         abbr, acronym{
             border-bottom:1px dotted #333;
             cursor:help;
-            }   
+            }
         address{
             font-style:italic;
             color:#333;
@@ -57,7 +61,7 @@
             }
         .content{
             margin:0 0 0 0em;
-            }   
+            }
         .section{
             margin: 0 0 0em 0;
             padding:1em 0 -1em 0;
@@ -98,17 +102,19 @@
             width: 27em;
         }
         #first-line-wrapper{
-            border-bottom:3px double #000;
-            margin:0 0 .1em 0;
+            display: flex;
+            justify-content: space-between;  /* pushes left/right */
+            align-items: baseline;           /* aligns h1 and text nicely */
+            border-bottom: 3px double #000;
+            margin: 0 0 .1em 0;
+            width: 100%;
+            box-sizing: border-box;
         }
         h1{
-            font-family: Arial;
-            margin:0;
-            padding:1em 0 0 0;
-            font-size:1.75em;
-            letter-spacing:.11em;
-            display:inline;
-            float:left;
+            margin: 0;
+            padding: 0 0 0.1em 0;
+            font-size: 1.38em;
+            letter-spacing: .11em;
             }
         h2 {
             font-family: Arial;
@@ -116,7 +122,7 @@
             font-variant: small-caps;
             letter-spacing:.11em;
             border-bottom:1px solid #000;
-            margin-top: .7em;
+            margin-top: .55em;
             margin-bottom:.55em;
             }
         .section h3 {
@@ -135,12 +141,33 @@
         a, a:visited{
              color: blue;
         }
+        #section-header {
+          display: flex;
+          justify-content: space-between;  /* pushes left/right apart */
+          align-items: baseline;           /* aligns h2 and contact text nicely */
+          margin-top: .55em;                /* preserve your current spacing */
+          margin-bottom:.55em;
+          border-bottom:1px solid #000;
+
+        }
+        #section-header h2 {
+            border-bottom: none;
+            margin-top: 0em;
+            margin-bottom:0em;
+        }
+        #contact {
+            text-align: right;
+            white-space: nowrap;
+            margin: 0;
+            padding: 0;
+            font-size: 0.9em;
+        }
     </style>
     <style type="text/css" media="print">
         body {
             background-color:#FFF;
             border-width:0 0 0 0;
-            margin:-2em 0em 0em 0em;
+            margin:0em 0em 0em 0em;
             padding:0em 0em 0em 0em;
             width:100%;
             font-size: .93em;
@@ -152,29 +179,34 @@
 </head><body>
     <div id="first-line-wrapper">
         <h1>David Leibovic</h1>
-        <div id="address"><a href="http://github.com/dasl-/">github.com/dasl-</a>&nbsp;&nbsp;<a href="mailto:dasl@php.net">dasl@php.net</a></div>
+        <div id="address"><a href="https://github.com/dasl-/">github.com/dasl-</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href="https://dasl.cc">https://dasl.cc</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href="mailto:dasl@php.net">dasl@php.net</a></div>
         <div style="clear:both;"></div>
     </div>
-    <div id="contact">Brooklyn, NY</div>
-    
+
+<div id="section-header">
+  <h2>Experience</h2>
+  <div id="contact">Brooklyn, NY&nbsp;&nbsp;804&#8210;349&#8210;9548</div>
+</div>
     <div class="section">
-        <h2 style="margin-top:-3px;">Experience</h2>
         <div class="content">
             <span class="date">Jan 2024 &ndash; Present</span>
             <h3>Senior staff systems architect - Etsy</h3>
             <address>Brooklyn, NY</address>
             <ul>
-                <li>I am designing a new memcached topology to reduce latency in our caching tier, which handles over 10,000,000 requests per second. I predict this will increase yearly sales by over $17,000,000.</li>
+                <li>Designed a new memcached topology to reduce latency in our caching tier, which handles over 10M requests per second. The improved latency grew yearly sales by an estimated $17M.</li>
+                <li>Optimized Etsy's largest feature store for ML models, which serves 6M reads per second. Reduced read latency to a third of previous levels and reduced error rate by a factor of 100, all while lowering cloud cost.</li>
+                <li>Unblocked a fleet-wide operating system upgrade by <a href="https://dasl.cc/2025/01/01/debugging-our-new-linux-kernel/">debugging</a> a kernel level performance problem.</li>
                 <li>Teaching, mentoring, and coaching across Etsy's engineering organization</li>
+                <li><i>If I had to make a list of the top five people we can't afford to lose at Etsy, David would be on it</i> -<a href="https://en.wikipedia.org/wiki/Rasmus_Lerdorf">Rasmus Lerdorf</a>, creator of PHP</li>
             </ul>
 
             <span class="date">Oct 2022 &ndash; Dec 2023</span>
             <h3>Senior staff software engineer, Data Access Architect - Etsy</h3>
             <address>Brooklyn, NY</address>
             <ul>
-                <li>I lead the design of our in-house ORM, which handles automatic caching and cache invalidation.</li>
+                <li>I led the design of our in-house ORM, which handles automatic caching and cache invalidation.</li>
                 <li>Published <a href="https://www.etsy.com/codeascraft/scaling-etsy-payments-with-vitess-part-3--reducing-cutover-risk">a post on Etsy&rsquo;s engineering blog</a> describing how we used <a href="https://vitess.io/">Vitess</a> to horizontally scale databases</li>
-                <li>Created tooling to perform automated PHP code refactoring to assist with large scale migration</li>
+                <li>Created tooling to perform automated PHP code refactoring to assist with large scale migration. Became a <a href="https://github.com/phan/phan">Phan</a> maintainer.</li>
             </ul>
 
             <span class="date">Oct 2020 &ndash; Sep 2022</span>
@@ -226,13 +258,13 @@
             <div style="clear:both;"></div>
         </div>
     </div>
-    
+
     <div class="section">
         <h2>Skills</h2>
 
-        <p><b>Languages:</b> Very experienced in PHP, SQL, and bash / <a href="https://gist.github.com/dasl-/6970cf99b87fea18a3ca8c858292a705">shell</a>. Intermediate experience in Python. Some experience in Go, JavaScript, Java, Processing, and openFrameworks.</p>
+        <p><b>Languages:</b> Very experienced in PHP, SQL, and bash / <a href="https://gist.github.com/dasl-/6970cf99b87fea18a3ca8c858292a705">shell</a>. Intermediate experience in Python. Some experience in Go, JavaScript, Java, Scala, Processing, and openFrameworks.</p>
 
-        <p style="margin-top:-10px"><b>Tools:</b> strace, tcpdump, <a href="https://github.com/mikebrady/shairport-sync/issues/1515#issuecomment-1233652850">Wireshark</a>, Systemd, Linux, Grafana, perf, phpspy</p>
+        <p style="margin-top:-10px"><b>Tools:</b> strace, tcpdump, <a href="https://github.com/mikebrady/shairport-sync/issues/1515#issuecomment-1233652850">Wireshark</a>, Systemd, Linux, StatsD, Prometheus, Grafana, perf, phpspy</p>
     </div>
     
     <div class="section">
