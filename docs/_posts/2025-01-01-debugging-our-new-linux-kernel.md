@@ -6,6 +6,8 @@ author: "David Leibovic"
 
 Read on to learn how we used network packet captures and BPF to debug web server performance, ultimately uncovering a Linux kernel performance issue. This investigation was a collaboration between myself and my colleagues.
 
+See the [discussion of this post](https://news.ycombinator.com/item?id=43046174) on Hacker News.
+
 **Contents**
 * toc
 {:toc}
