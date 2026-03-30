@@ -21,4 +21,4 @@ Create a new post in the `docs/_posts` directory. Prefix the filename with the d
 1. Linkify `<h1>`, `<h2>`, etc tags: https://github.com/allejo/jekyll-anchor-headings
 
 ## Known issues
-The site doesn't work via the url https://www.dasl.cc. This is because my username [ends with a hyphen](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/troubleshooting-custom-domains-and-github-pages#url-formatting-on-linux). But it works for all other combinations of the url, e.g. http://www.dasl.cc or https://dasl.cc.
+The site doesn't work via the url https://www.dasl.cc. This is because my username [ends with a hyphen](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/troubleshooting-custom-domains-and-github-pages#url-formatting-on-linux). But it works for all other combinations of the url, e.g. http://www.dasl.cc, http://dasl.cc, or https://dasl.cc.
